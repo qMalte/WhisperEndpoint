@@ -2,10 +2,15 @@ import whisper
 import asyncio
 import websockets
 import urllib.parse
+import os
 
-API_KEYS = [
-    "<GENERATE A CUSTOM STRING AS API-KEY>"
-]
+DEFAULT_API_KEY = 'HUL2CR5K8VTP3C4AFA54GKMAGUD2ZL6G'
+
+api_key_1 = os.getenv('APIKEY_1', DEFAULT_API_KEY)
+api_key_2 = os.getenv('APIKEY_2', DEFAULT_API_KEY)
+api_key_3 = os.getenv('APIKEY_3', DEFAULT_API_KEY)
+
+API_KEYS = [api_key_1, api_key_2, api_key_3]
 
 def transcribe(path):
     model = whisper.load_model("medium")
