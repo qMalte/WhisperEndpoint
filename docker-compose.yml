@@ -3,6 +3,7 @@ version: '3.8'
 services:
   whisper:
     image: werkhausen/whisper
+    restart: unless-stopped
     environment:
       # APIKEY_1: HUL2CR5K8VTP3C4AFA54GKMAGUD2ZL6G
       # APIKEY_2: HUL2CR5K8VTP3C4AFA54GKMAGUD2ZL6G
